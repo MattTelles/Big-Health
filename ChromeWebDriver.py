@@ -47,3 +47,6 @@ class ChromeWebDriver:
     def get_elements_by_xpath(self, xpath):
         elements = self.driver.find_elements(By.XPATH, xpath)
         return elements
+
+    def get_page_source(self):
+        return self.driver.page_source
