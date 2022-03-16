@@ -17,6 +17,7 @@ from Your_Sleep_Score_Signup_Page import Your_Sleep_Score_Signup_Page
 import random
 from time import sleep
 
+
 driver = ChromeWebDriver()
 driver.maximize()
 driver.fetch_page('https://onboarding.sleepio.com/sleepio/big-health')

@@ -10,6 +10,7 @@ class Your_Sleep_Score_1_Page:
         self.login_selector = '#sl-flow > header > div > a.sl-header__login'
         self.email_button_selector = '#transparent-button'
         self.home_logo_link_selector = '#sl-flow > header > div > a.sl-header__logo > img'
+        self.continue_button_xpath = '//*[@id="sl-flow"]/div[3]/div/div/div[2]/div/button'
 
     def load_checkboxes(self):
         check_boxes = self.driver.get_elements_by_tag('input')
@@ -26,7 +27,15 @@ class Your_Sleep_Score_1_Page:
         return self.checkboxes
 
     def get_checkbox(self, index):
+        self.load_checkboxes()
         return self.checkboxes[index]
+
+    def is_continue_button_enabled(self):
+        try:
+            ele = self.get_continue_button()
+        except:
+            return False
+        return ele.is_enabled
 
     def get_continue_button(self):
         ele = self.driver.get_element(self.continue_button_selector)
